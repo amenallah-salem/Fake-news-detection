@@ -1,6 +1,7 @@
 # Fake-news-detection
-#Detecting Fake News
-##Introduction
+##Detecting Fake News
+
+###Introduction
 In our days we do not trust all the news we hear or see in the social media. Mot of the time a big number of news are not real. So the following question rises. how will you detect the fake news? In the following project we will give the answer using Python. By practicing this advanced python project of detecting fake news, we will easily make a difference between real and fake news. Before moving ahead in the algorithm, we must get aware with some terms related to it like fake news, tfidfvectorizer, PassiveAggressive Classifier.
 
 
