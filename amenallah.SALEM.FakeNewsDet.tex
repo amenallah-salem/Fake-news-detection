@@ -1,0 +1,194 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{amsmath,amsthm,amscd}\usepackage{amssymb,verbatim,amssymb}
+\usepackage{amsfonts,amscd, graphicx, dsfont}
+\usepackage{lmodern}
+\usepackage{hyperref}%rendre les ref en couleur et liens
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    pdftitle={Sharelatex Example},
+    citecolor = blue,
+}
+ \usepackage{remreset}
+\makeatletter\@removefromreset{footnote}{chapter}\makeatother %Pour une numérotation continue des footnotes sur l'ensemble du document
+%\usepackage[notref,notcite]{showkeys} Show only eqref
+%\usepackage{showkeys} %Show all 
+\usepackage[english]{babel}
+\usepackage{mathrsfs}  
+\usepackage[top=20mm, bottom=20mm, left=23mm, right=24mm]{geometry}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+%prehumble
+%%%% debut macro %%%%
+\newenvironment{changemargin}[2]{\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{0pt}%
+\setlength{\rightmargin}{0pt}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{0pt plus 1pt}%
+\addtolength{\leftmargin}{#1}%
+\addtolength{\rightmargin}{#2}%
+}\item }{\end{list}}
+%%%% fin macro %%%%
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{ex}{Example}
+\def\i1{\mathds{1}}
+\def\h1{\hspace{0.2cm}}
+\def\v1{\vskip0.2cm}
+\def\no{\noindent}
+\def\txt{\text}
+\def\it{\textit}
+\def\bf{\textbf}
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\C{\mathbb{C}}
+\def\P{\mathbb{P}}
+\def\E{\mathbb{E}}
+\def\I{\mathbb{I}}
+\def\D{\mathbb{D}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\k{\kappa}
+\def\f{\varphi}
+\def\z{\zeta}
+\def\t{\theta} 
+\def\l{\lambda}
+\def\m{\mu}
+\def\n{\nu}
+\def\s{\sigma}
+\def\x{\textbf{x}}
+\def\el{\ell}
+\def\itun{\item[\textit{1.}]}
+\def\itdeux{\item[\textit{2.}]}
+\def\ittrois{\item[\textit{3.}]}
+\def\ite{\item[$(e)$]}
+\def\ita{\item[$(a)$]}
+\def\itb{\item[$(b)$]}
+\def\itc{\item[$(c)$]}
+\def\itd{\item[$(d)$]}
+\def\ite{\item[$(e)$]}
+\def\iti{\item[$(i)$]}
+\def\itii{\item[$(ii)$]}
+\def\itiii{\item[$(iii)$]}
+\def\itiv{\item[$(iv)$]}
+\def\itv{\item[$(v)$]}
+\def\cA{\mathcal{A}}
+\def\cB{\mathcal{B}}
+\def\cC{\mathcal{C}}
+\def\cD{\mathcal{D}}
+\def\cE{\mathcal{E}}
+\def\cF{\mathcal{F}}
+\def\cG{\mathcal{G}}
+\def\cH{\mathcal{H}}
+\def\cI{\mathcal{I}}
+\def\cJ{\mathcal{J}}
+\def\cK{\mathcal{K}}
+\def\cL{\mathcal{L}}
+\def\cM{\mathcal{M}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cP{\mathcal{P}}
+\def\cQ{\mathcal{Q}}
+\def\cR{\mathcal{R}}
+\def\cS{\mathcal{S}}
+\def\cT{\mathcal{T}}
+\def\cU{\mathcal{U}}
+\def\cV{\mathcal{V}}
+\def\cW{\mathcal{W}}
+\def\cX{\mathcal{X}}
+\def\cY{\mathcal{Y}}
+\def\cZ{\mathcal{Z}}
+\def\sA{{\mathscr A}}
+\def\sB{{\mathscr B}}
+\def\sC{{\mathscr C}}
+\def\sD{{\mathscr D}}
+\def\sE{{\mathscr E}}
+\def\sF{{\mathscr F}}
+\def\sG{{\mathscr G}}
+\def\sH{{\mathscr H}}
+\def\sI{{\mathscr I}}
+\def\sJ{{\mathscr J}}
+\def\sK{{\mathscr K}}
+\def\sL{{\mathscr L}}
+\def\sM{{\mathscr M}}
+\def\sN{{\mathscr N}}
+\def\sO{{\mathscr O}}
+\def\sP{{\mathscr P}}
+\def\sQ{{\mathscr Q}}
+\def\sR{{\mathscr R}}
+\def\sS{{\mathscr S}}
+\def\sT{{\mathscr T}}
+\def\sU{{\mathscr U}}
+\def\sV{{\mathscr V}}
+\def\sW{{\mathscr W}}
+\def\sX{{\mathscr X}}
+\def\sY{{\mathscr Y}}
+\def\sZ{{\mathscr Z}}
+\def\gb{\overline{\gamma}}
+\def\no{\noindent}
+\def\eq{\eqalign}
+\def\ss{\smallskip}
+\def\ms{\medskip}
+\def\bs{\bigskip}
+\def\q{\quad}
+\def\qq{\qquad}
+\def\hb{\hbox}
+\def\cvfd{\h1{\overset{(d)}\longrightarrow \h1}}%convergence en lois fini dimentionnel
+\def\cvp{\h1{\overset{\P}\longrightarrow \h1}}% convergence en prob
+\def\cvl{\h1{\overset{\cL}\longrightarrow \h1}}% convergence en loi
+\def\eqfd{\h1{\overset{(d)}= \h1}}
+%equalité en loi finis dimentionnelle
+\def\L{\Lambda}
+\def\accleft{\textquotedblleft}
+\def\accright{\textquotedblright}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\title{}
+\renewcommand{\thesection}{\Roman{section}} 
+\begin{document}%\maketitle
+
+\begin{center}
+Salem Amenallah\\M2 IASD, Université Paris-Dauphine $|$ Tunis\\
+e$-$mail =
+amenallah.salem@dauphine.tn\\
+amenallah.salem@dauphine.eu\\\textbf{25/09/2019} 
+
+\end{center}
+\section{Detecting Fake News}
+\subsection{Introduction}
+In our days we do not trust all the news we hear or see in the social media. Mot of the time a big number of news are not real. So the following question rises. how will you detect the fake news? In the following project we will give the answer using Python. By practicing this advanced python project of detecting fake news, we will easily make a difference between real and fake news. Before moving ahead in the algorithm, we must get aware with some terms related to it like fake news, tfidfvectorizer, PassiveAggressive Classifier.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TfidfVectorizer} \textbf{TF (Term Frequency)}: The number of times a word appears in a document is its Term Frequency. A higher value means a term appears more often than others, and so, the document is a good match when the term is part of the search terms.\\
+
+\no \textbf{IDF (Inverse Document Frequency)}: Words that occur many times a document, but also occur many times in many others, may be irrelevant. IDF is a measure of how significant a term is in the entire corpus.
+\\ \no The TfidfVectorizer converts a collection of raw documents into a matrix of TF-IDF features.
+\subsection{ PassiveAggressiveClassifier}
+
+Passive Aggressive algorithms are online learning algorithms. Such an algorithm remains passive for a correct classification outcome, and turns aggressive in the event of a miscalculation, updating and adjusting. Unlike most other algorithms, it does not converge. Its purpose is to make updates that correct the loss, causing very little change in the norm of the weight vector.
+\newpage
+\section{How to Detect Fake News : building the model}
+Our perpous is to build a model to accurately classify a piece of news as REAL or FAKE.
+
+\subsection{The idea with skelearn}
+This algorithm of detecting fake news deals with fake and real news. Using sklearn, we build a TfidfVectorizer on our dataset. Then, we initialize a PassiveAggressive Classifier and fit the model. In the end, the accuracy score and the confusion matrix tell us how well our model fares.
+\subsection{The Dataset}
+the dataset we’ll use for this project is called call it news.csv. This dataset has a shape of $7796\times 4$. The first column identifies the news, the second and third are the title and text, and the fourth column has labels denoting whether the news is REAL or FAKE. The dataset takes up 29.2MB of space and you can
+
+
+\end{document}
